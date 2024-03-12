@@ -1,0 +1,48 @@
+### 121. Best Time to Buy and Sell Stock
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+ 
+
+Example 1:
+
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+Example 2:
+
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transactions are done and the max profit = 0.
+ 
+
+Constraints:
+
+1 <= prices.length <= 105
+0 <= prices[i] <= 104
+
+
+
+### Solution
+
+### Intuition
+The problem involves finding the maximum profit that can be obtained by buying and selling a stock. One approach could be to iterate through the array of prices and keep track of the minimum price seen so far. For each price, calculate the profit that could be made by selling at that price (current price - minimum price seen so far) and update the maximum profit if needed.
+
+### Approach
+Initialize a variable min to store the minimum price seen so far, starting with the first price in the array.
+Initialize a variable profit to store the maximum profit, starting at 0.
+Iterate through the array of prices using a for loop.
+For each price, check if it is less than the current min. If it is, update min to the current price.
+Calculate the profit that could be made by selling at the current price (current price - min).
+Update profit to the maximum of the current profit and the calculated profit.
+After iterating through all prices, return the final profit.
+This approach ensures that min always represents the minimum price seen so far, and profit stores the maximum profit that can be achieved by selling the stock at the right time.
+
+Complexity
+Time complexity: O(n)O(n)O(n)
+
+Space complexity:O(1)O(1)O(1)
